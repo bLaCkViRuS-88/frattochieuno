@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatti</title> 
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+    h1 {
+        color: #333;
+        text-align: center;
+        margin-top: 20px;
+    }
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    .logo {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .logo img {
+        max-width: 100%;
+        height: auto;
+    }
+    header {
+        background-color: #2E8B57;
+        padding: 10px 0;
+        color: #fff;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        margin-bottom: 30px;
+    }
+    header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    header .logo img {
+        height: 50px;
+        vertical-align: middle;
+    }
+    header .menu ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+    header .menu li {
+        margin-left: 25px;
+    }
+    header .menu a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 8px 12px;
+        border-radius: 4px;
+        transition: background-color 0.2s ease;
+    }
+    header .menu a:hover {
+        background-color: #3CB371;
+        text-decoration: none;
+    }
+    .adress_div {
+        background-color: #fff;
+        padding: 15px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        margin-bottom: 20px;
+    }
+    .adress_div h2 {
+        margin-top: 0;
+    }
+    .adress_div p {
+        margin: 5px 0;
+    }
+    .adress_div a {
+        color: #007bff;
+        text-decoration: none;
+    }
+    .adress_div a:hover {
+        text-decoration: underline;
+    }
+    .adress_div img {
+        vertical-align: middle;
+        margin-left: 10px;
+    }
+</style>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="../images/logo.png" alt="logo">
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contatti.html">Contatti</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <h1>Contatti</h1>
+        <p>Per qualsiasi informazione, non esitare a contattarci!</p>
+        <div class="adress_div">
+            <h2>Instagram</h2>
+            <p>Seguici su Instagram: <a href="https://www.instagram.com/tuo_account" target="_blank">@tuo_account</a></p>
+            <a href="https://www.instagram.com/tuo_account" target="_blank">
+                <img src="../images/logo.png" alt="Instagram Logo" class="logo" style="width: 50px; height: 50px;">
+            </a>
+        </div>
+        <div class="adress_div">
+            <h2>Email</h2>
+            <p>Puoi inviarci un'email a: <a href="mailto:stafffratttocchie1@gmail.com">stafffratttocchie1@gmail.com</a></p>
+            <a href="mailto:stafffratttocchie1@gmail.com">
+                <img src="../images/mail.png" alt="Email Logo" class="logo" style="width: 50px; height: 50px;">
+            </a>
+        </div>
+        <div class="adress_div">
+            <h2>Telefono</h2>
+            <p>Per contattarci telefonicamente, chiama il numero: <a href="tel:+1234567890">+123 456 7890</a></p>
+        </div>
+    </div>
+</body>
+</html>

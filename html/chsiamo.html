@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font stack */ /* Consistent font */
+        margin: 0;
+        padding: 0;
+        background-color: #FAFAF0; /* Warm, light off-white background */
+        color: #333333; /* Default text color */
+    }
+
+    /* Old #menu styles - will be replaced by header styles*/
+       header {
+        background-color: #2E8B57; /* SeaGreen - consistent theme color */
+        padding: 10px 0;
+        color: #FFFFFF; /* White text for header elements if any */
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    }
+
+    header .container {
+        display: flex;
+        justify-content: space-between; /* Puts logo on left, menu on right */
+        align-items: center;
+        max-width: 1200px; /* Or your preferred site max-width */
+        margin: 0 auto;
+        padding: 0 20px; /* Padding on the sides of the container */
+    }
+
+    header .logo img {
+        height: 50px; /* Adjust as needed */
+        vertical-align: middle; /* Helps with alignment if there's text next to it */
+    }
+
+    header .menu ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex; /* Align menu items in a row */
+    }
+
+    header .menu li {
+        margin-left: 25px; /* Space between menu items */
+    }
+
+    header .menu a {
+        color: #FFFFFF; /* White links */
+        text-decoration: none;
+        font-weight: bold;
+        padding: 8px 12px; /* Padding for a larger clickable area */
+        border-radius: 4px; /* Slightly rounded corners for links (optional) */
+        transition: background-color 0.2s ease;
+    }
+
+    header .menu a:hover {
+        background-color: #3CB371; /* MediumSeaGreen on hover - a lighter shade */
+        text-decoration: none; /* Keep no underline on hover if preferred */
+    }
+
+    #container {
+        /* Uses .content-box for common styles */
+        /* Specific style for container if needed, e.g., width */
+        width: 90%; 
+    }
+    
+    h1 {
+        color: #3CB371; /* MediumSeaGreen - for main headings */
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    p {
+        line-height: 1.6;
+        margin-bottom: 15px;
+    }
+
+    #Storia h1 {
+        color: #3CB371; /* Consistent with other main H1s */
+    }
+
+    /* Styles for individual squadriglia items */
+    .squadriglia-item {
+        background-color: #fff;
+        border: 1px solid #AED581;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        width: calc(33.333% - 20px);
+        min-width: 260px;
+        box-sizing: border-box;
+        margin-bottom: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+        padding: 20px 10px 15px 10px;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .squadriglia-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    }
+
+    .squadriglia-item img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 6px;
+        margin-bottom: 15px;
+        max-width: 100%;
+    }
+
+    /* Responsive: 2 colonne su schermi medi, 1 su piccoli */
+    @media (max-width: 900px) {
+        #squadriglie {
+            gap: 20px;
+        }
+        .squadriglia-item {
+            width: calc(50% - 10px);
+            min-width: 200px;
+        }
+    }
+    @media (max-width: 600px) {
+        #squadriglie {
+            gap: 10px;
+        }
+        .squadriglia-item {
+            width: 100%;
+            min-width: 0;
+        }
+    }
+    #footer {
+        text-align: center;
+        padding: 20px;
+        margin-top: 20px;
+        background-color: #2E8B57; /* SeaGreen - consistent theme color */
+        color: #FFFFFF; /* White text */
+        border-top: 4px solid #FFD700; /* Gold accent top border */
+    }
+
+    /* Squadriglie container stile news.css */
+    #squadriglie {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 30px;
+        background: none;
+        box-shadow: none;
+        padding: 0;
+        max-width: 1000px;
+        margin: 30px auto;
+        box-sizing: border-box;
+        flex-direction: row;
+    }
+
+    /* Card stile news-item */
+    .squadriglia-item {
+        background-color: #fff;
+        border: 1px solid #AED581;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        width: calc(33.333% - 20px);
+        min-width: 260px;
+        box-sizing: border-box;
+        margin-bottom: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+        padding: 20px 10px 15px 10px;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .squadriglia-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    }
+
+    .squadriglia-item img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 6px;
+        margin-bottom: 15px;
+        max-width: 100%;
+    }
+
+    /* Responsive: 2 colonne su schermi medi, 1 su piccoli */
+    @media (max-width: 900px) {
+        #squadriglie {
+            gap: 20px;
+        }
+        .squadriglia-item {
+            width: calc(50% - 10px);
+            min-width: 200px;
+        }
+    }
+    @media (max-width: 600px) {
+        #squadriglie {
+            gap: 10px;
+        }
+        .squadriglia-item {
+            width: 100%;
+            min-width: 0;
+        }
+    }
+    </style>
+    <title>Chi Siamo - Reparto Scout</title>
+</head>
+ 
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="../images/logo.png" alt="Reparto Brownsea Logo">
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li>
+                        <a href="/html/index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="/html/news.html">News</a>
+                    </li>
+                    <li>
+                        <a href="#">Attività</a>
+                    </li>
+                    <li>
+                        <a href="#">contatti</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div id="container" class="content-box">
+        <h1>
+            Un reparto scout pieno di sogni e aspettative
+        </h1>
+        <p>
+            Siamo un gruppo di ragazzi e ragazze uniti dalla voglia di avvent
+            ura, dalla curiosità di esplorare il mondo che ci c
+            irconda e dal desiderio di crescere insieme. Ogni attiv
+            ità, ogni uscita, ogni campo estivo è un'occasione per im
+            parare cose nuove, superare i propri limiti e costruire amiciz
+            ie solide. Crediamo nei valori dello scoutismo: lealtà, servizio, ris
+            petto per la natura e per gli altri. Il nostro reparto è un luogo dove i sogn
+            i prendono forma e le aspettative si trasformano in esperienze indimenticabili, formand
+            o cittadini responsabili e consapevoli.
+        </p>
+    </div>    
+    <div id="Storia" class="content-box">
+        <h1>
+            Storia
+        </h1>
+        <p>
+           siamo nati nel 2000 e da quel momento siamo pieni di sogni e aspettative
+           e adesso risediamo a casa san giuseppe
+        </p>
+    </div>
+    <div id="squadriglie" class="content-box">
+    <h1>Squadriglie</h1>
+    <!-- Sostituiamo la lista ul con div individuali -->
+    <div class="squadriglia-item">
+        <img src="../img/news3.jpg" alt="Scout della squadriglia Orsi sorridenti durante un'attività all'aperto in un ambiente naturale, atmosfera di gioia e collaborazione">
+        la squadriglia Orsi
+    </div>
+    <div class="squadriglia-item">
+        <img src="../img/news3.jpg" alt="Scout della squadriglia Tigri sorridono e collaborano durante un attività all aperto in un ambiente naturale atmosfera di entusiasmo e amicizia">
+        la squadriglia Tigri
+    </div>
+    <div class="squadriglia-item">
+        <img src="../img/news3.jpg" alt="news3">
+        la squadriglia Aquile
+    </div>
+    <div class="squadriglia-item">
+        <img src="../img/news3.jpg" alt="news3">
+        la squadriglia Cervi
+    </div>
+    <div class="squadriglia-item">
+        <img src="../img/news3.jpg" alt="news3">
+        la squadriglia Giaguari
+    </div>
+    <div class="squadriglia-item">
+        <img src="../img/news3.jpg" alt="news3">
+        la squadriglia Pantere
+    </div>
+    </div>
+    <div id="footer">
+    <p>            
+        reparto brownsea © 2024
+    </p>
+    </div>
+</body>
+</html>

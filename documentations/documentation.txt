@@ -1,0 +1,68 @@
+<!--
+    DOCUMENTAZIONE SITO REPARTO SCOUT
+
+    STRUTTURA PRINCIPALE:
+    - header: contiene il logo e il menu di navigazione (Home, News, Chi siamo, Contatti, ecc.)
+    - main/container: area centrale con i contenuti specifici della pagina
+    - footer: informazioni di contatto e copyright
+
+    STILE:
+    - I colori principali sono #2E8B57 (verde), #3CB371 (verde chiaro), #AED581 (bordo verde chiaro), #FAFAF0 (sfondo chiaro)
+    - Le card (news, squadriglie) usano flexbox per il layout responsivo
+    - Le immagini nelle card hanno object-fit: cover e border-radius
+
+    COME AGGIUNGERE UNA NUOVA NEWS O SQUADRIGLIA:
+    1. Copia e incolla un blocco <div class="news-item">...</div> (per news) o <div class="squadriglia-item">...</div> (per squadriglie)
+    2. Aggiorna titolo, testo e immagine
+    3. Le card si adatteranno automaticamente al layout
+
+    COME AGGIUNGERE UNA VOCE AL MENU:
+    1. Vai nel <nav class="menu"> e aggiungi un nuovo <li><a href="...">Nome Pagina</a></li>
+    2. Crea il file HTML corrispondente se necessario
+
+    NOTE PER LO SVILUPPO:
+    - Per modificare i colori o il layout, agire sui selettori CSS in <style> o nel file CSS collegato
+    - Per aggiungere nuove sezioni, seguire la struttura esistente per coerenza grafica
+    - Per immagini, usare sempre width: 100% e object-fit: cover per mantenere proporzioni e stile
+
+    ESEMPIO BLOCCO NEWS:
+    <!--
+    <div class="news-item">
+        <img src="../images/news1.jpg" alt="Titolo News">
+        <h2>Titolo News</h2>
+        <p>Testo della news...</p>
+    </div>
+    -->
+
+    ESEMPIO BLOCCO SQUADRIGLIA:
+    <!--
+    <div class="squadriglia-item">
+        <img src="../images/orsi.jpg" alt="Orsi">
+        <h2>Orsi</h2>
+        <p>Descrizione breve della squadriglia...</p>
+    </div>
+    -->
+
+    ESEMPIO AGGIUNTA MENU:
+    <!--
+    <nav class="menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="chisiamo.html">Chi siamo</a></li>
+            <li><a href="contatti.html">Contatti</a></li>
+            <li><a href="gallery.html">Gallery</a></li> <!-- Nuova voce -->
+        </ul>
+    </nav>
+    -->
+
+    RESPONSIVE:
+    - Il layout delle card passa da 3 colonne a 2 e poi a 1 su schermi piccoli
+    - Modifica i breakpoint @media nel CSS per personalizzare la responsività
+
+    AUTORI:
+    - [Inserisci qui i nomi degli autori o del gruppo]
+
+    ULTIMO AGGIORNAMENTO:
+    - [Inserisci qui la data dell’ultimo aggiornamento]
+-->

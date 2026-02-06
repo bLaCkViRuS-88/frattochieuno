@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reparto Brownsea</title>
+</head>
+<style>
+ body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4fbf4;
+  color: #2a4d2a;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  min-height: 100vh; /* Add this line */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+#header {
+  background-color: #3b7d3b;
+  color: #ffffff;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Menu di navigazione */
+#menu {
+  background-color: #2f6e2f;
+  padding: 10px 0;
+  box-shadow: inset 0 -3px 5px rgba(0,0,0,0.1);
+}
+
+#menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#menu li {
+  margin: 0 15px;
+}
+
+#menu a {
+  color: #e1f0e1;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+#menu a:hover,
+#menu a:focus {
+  background-color: #4caf50;
+  color: #fff;
+  outline: none;
+}
+
+/* Contenitori principali */
+#main, #sidebar, #content {
+  padding: 20px;
+  background-color: #e6f2e6;
+  margin: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 0.1);
+}
+.frontimage img {
+  max-width: 40%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  margin: 20px 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid #3b7d3b; /* Bordo verde */
+  padding: 5px; /* Padding per il bordo */
+  box-sizing: border-box; /* Include il padding nel calcolo della larghezza */
+}
+.frontimage img:hover {
+  transform: scale(1.05);
+}
+
+/* Layout a griglia per desktop */
+@media (min-width: 768px) {
+  body {
+    display: grid;
+    grid-template-areas: 
+      "header header"
+      "menu menu"
+      "main sidebar"
+      "content sidebar"
+      "footer footer";
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 15px;
+    min-height: 100vh; /* Ensure grid covers full height */
+  }
+
+  #header { grid-area: header; }
+  #menu { grid-area: menu; }
+  #main { grid-area: main; }
+  #sidebar { grid-area: sidebar; }
+  #content { grid-area: content; }
+  #footer { grid-area: footer; margin: 10px; }
+}
+.frontimage {
+  text-align: center;
+  margin: 20px 0;
+}
+
+
+
+
+.frontimage img:hover {
+  transform: scale(1.05);
+}
+
+/* Footer */
+#footer {
+  background-color: #3b7d3b;
+  color: white;
+  text-align: center;
+  padding: 15px 20px;
+  font-size: 0.9rem;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+  margin-top: auto; /* Add this line for mobile/flex */
+}
+
+/* Titoli */
+h1, h2 {
+  font-weight: 700;
+}
+
+h1 {
+  margin-bottom: 0.3em;
+}
+
+h2 {
+  margin-top: 0;
+  color: #2f6e2f;
+}
+
+/* Paragrafi */
+p {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+</style>
+<body>
+    <div id="header">
+        <h1>Reparto Brownsea</h1>
+    </div>
+    <div id="main">
+        <h2>Il reparto Brownsea</h2>
+        <h2>Chi Siamo</h2>
+        <p>siamo un reparto scout dell'agesci con sede a Frattochie</p>
+        <h2>Attività</h2>
+        <p>Beh facciamo varie attività tra cui quelle a conttatto con la natura e di volontariato</p>
+    </div>
+    <div id="sidebar">
+        <h2>Contatti</h2>
+        <p>Telefono: 333-333-3333</p>
+        <p>Email: repartobrownsea@gmail.com</p>
+    </div>
+    <div class="frontimage">
+      <a href="../images/stemma.JPG" alt="Stemma"><img src="../images/stemma.JPG" alt="Stemma"></a>
+    </div>
+    <div id="news">
+        <h2>Ultime Notizie</h2>
+        <p>Il nostro prossimo incontro sarà il 15 Marzo alle 18:00 presso la sede del reparto.</p>
+    </div>
+    <div id="content">
+        <h2>News</h2>
+        <p>Abbiamo organizzato un campo scout per i nostri ragazzi</p>
+    </div>
+    <div id="calendario">
+        <h2>Calendario</h2>
+        <p>Qui troverai il calendario delle nostre attività</p>
+    </div>
+    <div id="galleria">
+       <a img src="/images/san_giorgio.jpg" alt="San Giorgio">Galleria</a>
+    </div>
+    <div id="menu">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="../html/chsiamo.html">Chi Siamo</a></li>
+            <li><a href="#">calendario</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="#">Contatti</a></li>
+        </ul>
+    </div>
+    <div id="footer">
+        <p>© 2022 Reparto Brownsea</p>
+    </div>
+</body>
+</html>

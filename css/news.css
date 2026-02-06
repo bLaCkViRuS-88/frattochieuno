@@ -1,0 +1,37 @@
+/* Styles specific to the news page */
+.news {
+    text-align: center;
+}
+
+.news h1 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.news-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Distributes items evenly, first item at start, last at end */
+}
+
+.news-item {
+    width: calc(33.333% - 20px); /* For a 3-column layout, with some spacing. Adjust 20px based on desired gap */
+    margin-bottom: 40px;
+    /* Consider adding box-sizing: border-box; if padding/borders are added to .news-item */
+}
+
+.news-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+.news-item h2 {
+    margin-top: 20px;
+    font-size: 24px;
+}
+
+.news-item p {
+    margin-top: 10px;
+    font-size: 16px;
+}

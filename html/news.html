@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/news.css"> <!-- Added link to news-specific CSS -->
+</head>
+<style>
+    /* Basic page styling for context - can be overridden by style.css if more specific */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font stack */
+        margin: 0;
+        padding: 0;
+        background-color: #FAFAF0; /* Warm, light off-white background, consistent with chsiamo.html */
+        color: #333333; /* Default text color */
+        line-height: 1.6;
+    }
+
+    .news {
+        text-align: center;
+        padding: 40px 20px; /* Add some padding around the news section */
+        background-color: #ffffff; /* White background for the main news area */
+        margin: 30px auto; /* Centering the news section, slightly more margin */
+    }
+
+    .news h1 {
+        font-size: 38px; /* Slightly larger */
+        margin-bottom: 40px;
+        color: #3CB371; /* MediumSeaGreen, consistent with chsiamo.html headings */
+    }
+
+    .news-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Center items, good if last row isn't full */
+        gap: 30px; /* Consistent spacing between news items */
+    }
+
+    .news-item {
+        /* For 3 items with 30px gap: (100% - 2 * 30px) / 3 */
+        flex-basis: calc((100% - 60px) / 3);
+        min-width: 290px; /* Minimum width before items stack */
+        flex-grow: 1; /* Allow items to grow and fill space */
+        background-color: #ffffff; /* White background for cards */
+        border: 1px solid #AED581; /* Softer, lighter green border */
+        border-radius: 10px; /* Rounded corners for a modern look */
+        padding: 25px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* Adjusted shadow for subtlety */
+        box-sizing: border-box; /* Crucial for width/padding calculations */
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+    }
+
+    .news-item:hover {
+        transform: translateY(-5px); /* Slight lift on hover */
+        box-shadow: 0 6px 18px rgba(0,0,0,0.12); /* Enhanced shadow on hover */
+    }
+
+    .news-item img {
+        width: 100%;
+        height: 220px; /* Slightly taller images */
+        object-fit: cover;
+        border-radius: 6px; /* Rounded corners for the image */
+        margin-bottom: 20px; /* Space between image and title */
+    }
+    .news-item img {
+        width: 100%;
+        height: 220px; /* Slightly taller images */
+        object-fit: cover;
+        border-radius: 6px; /* Rounded corners for the image */
+        margin-bottom: 20px; /* Space between image and title */
+        /* Remove flex-basis, min-width, flex-grow from here */
+    }
+
+    .news-item {
+        flex-basis: calc((100% - 60px) / 3); /* Aims for three items per row, accounting for gaps */
+        min-width: 290px; /* Ensures items don't get too small before wrapping */
+        flex-grow: 1;
+    }
+
+    .news-item h2 {
+        margin-top: 0; /* Image margin-bottom handles top spacing */
+        margin-bottom: 12px; /* Space below title */
+        font-size: 22px;
+        color: #2E8B57; /* SeaGreen, primary theme color from chsiamo.html */
+    }
+
+    .news-item p {
+        margin-top: 0;
+        font-size: 16px;
+        color: #4f4f4f; /* Readable dark grey for paragraph text */
+        line-height: 1.7; /* Improved readability */
+        flex-grow: 1; /* Allows paragraph to take up available space, aligning footers of cards */
+    }
+
+    /* Footer specific styles - these will be applied from within this HTML */
+    footer {
+        background-color: #2E8B57; /* SeaGreen, consistent with chsiamo.html footer */
+        color: #FFFFFF; /* White text for footer */
+        padding: 30px 20px;
+        text-align: center;
+        border-top: 4px solid #FFD700; /* Gold accent top border, consistent with chsiamo.html */
+    }
+
+    .footer-container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 20px; /* Space between footer columns */
+        max-width: 1000px; /* Limit footer width */
+        margin: 0 auto; /* Center the footer container */
+    }
+
+    .footer-item {
+        flex: 1;
+        min-width: 200px; /* Minimum width for footer columns */
+        text-align: left; /* Align text to left within each footer item */
+    }
+
+    .footer-item h3 {
+        font-size: 1.1em;
+        color: #FFD700; /* Gold, consistent accent color */
+        margin-bottom: 15px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid #5cb85c; /* Lighter green border that complements SeaGreen */
+    }
+
+    .footer-item ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .footer-item li {
+        margin-bottom: 10px;
+    }
+
+    .footer-item a {
+        color: #F0FFF0; /* Honeydew (very light green/off-white) for good contrast on SeaGreen */
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+
+    .footer-item a:hover {
+        color: #FFD700; /* Gold on hover for a nice highlight */
+        text-decoration: underline;
+    }
+
+    /* Header and Menu Styles */
+    header {
+        background-color: #2E8B57; /* SeaGreen - consistent theme color */
+        padding: 10px 0;
+        color: #FFFFFF; /* White text for header elements if any */
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    }
+
+    header .container {
+        display: flex;
+        justify-content: space-between; /* Puts logo on left, menu on right */
+        align-items: center;
+        max-width: 1200px; /* Or your preferred site max-width */
+        margin: 0 auto;
+        padding: 0 20px; /* Padding on the sides of the container */
+    }
+
+    header .logo img {
+        height: 50px; /* Adjust as needed */
+        vertical-align: middle; /* Helps with alignment if there's text next to it */
+    }
+
+    header .menu ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex; /* Align menu items in a row */
+    }
+
+    header .menu li {
+        margin-left: 25px; /* Space between menu items */
+    }
+
+    header .menu a {
+        color: #FFFFFF; /* White links */
+        text-decoration: none;
+        font-weight: bold;
+        padding: 8px 12px; /* Padding for a larger clickable area */
+        border-radius: 4px; /* Slightly rounded corners for links (optional) */
+        transition: background-color 0.2s ease;
+    }
+
+    header .menu a:hover {
+        background-color: #3CB371; /* MediumSeaGreen on hover - a lighter shade */
+        text-decoration: none; /* Keep no underline on hover if preferred */
+    }
+</style>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="../images/logo.png" alt="logo">
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>                    <li><a href="gallery.html">Gallery</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="news">
+                <h1>News</h1>
+                <div class="news-container">
+                    <div class="news-item">
+                        <img src="../images/san_giorgio.jpg" alt="news1">
+                        <h2>San Giorgio</h2>
+                        <p>San Giorgio 2025 .</p>
+                    </div>
+                    <div class="news-item">
+                        <img src="../images/fuoco_reparto.JPG" alt="news2">
+                        <h2>Il campo di reparto si avvicina</h2>
+                        <p>Aspettiamo con gioglia il momento!</p>
+                    </div>
+                    <!--<div class="news-item">
+                        <img src="../images/" alt="news3">
+                        <h2>Titolo notizia 3</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, voluptates.</p>
+                    </div>-->
+                        <div class="news-item">
+                        <img src="../images/mare.jpg" alt="mare">
+                        <h2>Uscita al Mare</h2>
+                        <p>abbiamo fatto un uscita al mare!</p>
+                    </div>
+                    <!--
+                    <div class="news-item">
+                        <img src="../img/news4.jpg" alt="news4">
+                        <h2>Titolo notizia 4</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, voluptates.</p>
+                    </div>
+                    -->
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer-container">  
+
+                <div class="footer-item">
+                    <h3>Contatti</h3>
+                    <ul>
+                        <li><a href="tel:+393456789012">+39 345 6789012</a></li>
+                        <li><a href="mailto:info@mywebsite.com">info@mywebsite.com</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-item">
+                    <h3>Indirizzo</h3>
+                    <ul>
+                        <li>Via dei Mille, 123</li>
+                        <li>Roma, Italia</li>
+                    </ul>
+                </div>
+
+                <div class="footer-item">
+                    <h3>Social</h3>
+                    <ul>
+                        <li><a href="https://www.facebook.com">Facebook</a></li>
+                        <li><a href="https://www.twitter.com">Twitter</a></li>
+                        <li><a href="https://www.instagram.com">Instagram</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
